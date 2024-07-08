@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled sorted 
+893917360d667645908753b982edd1624dc57cd6 refs/remotes/origin/main
+7a2997f8bb9cd910d664f9626c4b1721d82f49a6 refs/remotes/origin/renovate/bash-5.x
+f07bfc6eb4b2f33b568a8e1651e202d98408cfa5 refs/remotes/origin/renovate/catppuccin-whiskers-2.x

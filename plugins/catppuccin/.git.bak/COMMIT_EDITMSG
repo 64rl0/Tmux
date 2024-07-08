@@ -1,0 +1,5 @@
+REFACTOR: update module_builder.sh to fix bug wit status bar transparency
+
+The ${thm_gray} was hardcoded in the function so that a space between
+the module icon and the module text will walway apper in gray. this has
+now been updated to follow the "default" colorscheme
