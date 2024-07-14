@@ -7,8 +7,8 @@ build_status_module() {
   local text="$4"
 
   if [ "$status_fill" = "icon" ]; then
-    local show_icon="#[fg=$thm_bg,bg=$color,nobold,nounderscore,noitalics]$icon "
-    local show_text="#[fg=$thm_fg,bg=default] $text"
+    local show_icon="#[fg=$thm_bg,bg=$color,nobold,nounderscore,noitalics]$icon#[fg=$color,bg=$thm_bg,nobold,nounderscore,noitalics]"
+    local show_text="#[fg=$thm_fg]$text"
 
     if [ "$status_connect_separator" = "yes" ]; then
       local show_left_separator="#[fg=$color,bg=$thm_gray,nobold,nounderscore,noitalics]$status_left_separator"
