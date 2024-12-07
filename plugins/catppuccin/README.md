@@ -55,7 +55,8 @@ If you do not have a patched font installed, you can override or remove any icon
 2. Add the Catppuccin plugin:
 
 ```bash
-set -g @plugin 'catppuccin/tmux'
+set -g @plugin 'catppuccin/tmux#latest' # See https://github.com/catppuccin/tmux/tags for additional tags
+# set -g @plugin 'catppuccin/tmux' # main branch
 # ...alongside
 set -g @plugin 'tmux-plugins/tpm'
 ```
@@ -63,7 +64,7 @@ set -g @plugin 'tmux-plugins/tpm'
 3. (Optional) Set your preferred flavor, it defaults to `"mocha"`:
 
 ```bash
-set -g @catppuccin_flavour 'mocha' # latte,frappe, macchiato or mocha
+set -g @catppuccin_flavor 'mocha' # latte,frappe, macchiato or mocha
 ```
 
 ### Manual
@@ -84,8 +85,15 @@ This is a diagram of how the theme is split between its components.
 ## Configuration options
 
 All flavors support certain levels of customization that match our [Catppuccin
-Style Guide][style-guide]. To add these customizations, add any of the following
-options to your Tmux configuration.
+Style Guide][style-guide]. To add these customizations, you may add any of the
+following options to your Tmux configuration.
+
+If you want to set a text-based customization to an emtpy string, use `null` to
+do so. For instance:
+
+```sh
+set -g @catppuccin_icon_window_last "null"
+```
 
 ### Window
 
@@ -119,19 +127,12 @@ Values:
 
 #### Enable window status:
 ```sh
-set -g @catppuccin_window_status_enable "no"
+set -g @catppuccin_window_status "no"
 ```
 Values:
-- yes - this will enable the window status part
 - no - this will disable the window status part
-
-#### Enable window status icons instead of text:
-```sh
-set -g @catppuccin_window_status_icon_enable "yes"
-```
-Values:
-- yes - this will replace the windows status text with icons
-- no - this will keep the windows status in text format
+- icon - this will replace the windows status text with icons
+- text - this will keep the windows status in text format
 
 #### Override windows status icons
 ```sh
@@ -185,6 +186,7 @@ Values:
 set -g @catppuccin_window_current_color "#{thm_orange}" # text color
 set -g @catppuccin_window_current_background "#{thm_bg}"
 ```
+Note that color and background fields are swapped when `@catppuccin_window_current_fill` is set to "all".
 
 Values:
 - color - a theme color (`#{thm_<color>}`) or a hexadecimal color value
@@ -194,6 +196,12 @@ Values:
 set -g @catppuccin_window_current_text "#{b:pane_current_path}" # use "#W" for application instead of directory
 ```
 
+#### Override the window current separators
+```sh
+set -g @catppuccin_window_current_left_separator ""
+set -g @catppuccin_window_current_middle_separator "█"
+set -g @catppuccin_window_current_right_separator ""
+```
 ### Pane
 
 #### Set the pane border style:
@@ -208,6 +216,25 @@ set -g @catppuccin_pane_border_style "fg=#{thm_gray}" # Use a value compatible w
 set -g @catppuccin_pane_active_border_style "fg=#{thm_orange}" # Use a value compatible with the standard tmux 'pane-border-active-style'
 ```
 
+### Menu
+
+#### Set the menu style:
+
+```sh
+set -g @catppuccin_menu_style "default" # Use a value compatible with the standard tmux `menu-style`
+```
+
+#### Set the menu selected style:
+
+```sh
+set -g @catppuccin_menu_selected_style "fg=#{thm_gray},bg=#{thm_yellow}" # Use a value compatible with the standard tmux `menu-selected-style`
+```
+
+### Set the menu border style:
+
+```sh
+set -g @catppuccin_menu_border_style "default" # Use a value compatible with the standard tmux `menu-border-style`
+```
 
 ### Status
 #### Set the default status bar visibility
@@ -233,6 +260,12 @@ tmux kill-server & tmux
 #### Set the status module left separator:
 ```sh
 set -g @catppuccin_status_left_separator ""
+```
+
+#### Set the status module middle separator:
+
+```sh
+set -g @catppuccin_status_middle_separator "null"
 ```
 
 #### Set the status module right separator:
@@ -287,7 +320,7 @@ set -g @catppuccin_pane_background_color "#{thm_orange}"
 #### Set the module list
 ```sh
 set -g @catppuccin_status_modules_right "application session"
-set -g @catppuccin_status_modules_left ""
+set -g @catppuccin_status_modules_left "null"
 ```
 Provide a list of modules and the order in which you want them to appear in the status.
 
@@ -318,16 +351,6 @@ set -g @catppuccin_[module_name]_color "color"
 #### Override the specific module text
 ```sh
 set -g @catppuccin_[module_name]_text "text"
-```
-
-#### Removing a specific module option
-```sh
-set -g @catppuccin_[module_name]_[option] "null"
-```
-This is for the situation where you want to remove the icon from a module.
-Ex:
-```sh
-set -g @catppuccin_date_time_icon "null"
 ```
 
 ### Battery module
@@ -475,6 +498,33 @@ set -g @plugin 'olimorris/tmux-pomodoro-plus'
 Add the pomodoro module to the status modules list.
 ```sh
 set -g @catppuccin_status_modules_right "... pomodoro_plus ..."
+```
+
+
+### Kube module
+
+#### Requirements
+This module depends on [kube-tmux](https://github.com/jonmosco/kube-tmux).
+
+#### Install
+The preferred way to install kube-tmux is using [TPM](https://github.com/tmux-plugins/tpm).
+
+#### Configure
+```sh
+set -g @plugin 'catppuccin/tmux'
+...
+set -g @plugin 'jonmosco/kube-tmux'
+```
+
+Add the tmux module to the status modules list.
+```sh
+set -g @catppuccin_status_modules_right "... kube ..."
+```
+
+Optionally override the kube-tmux colors
+```sh
+set -g @catppuccin_kube_context_color "#{thm_red}"
+set -g @catppuccin_kube_namespace_color "#{thm_cyan}"
 ```
 
 
