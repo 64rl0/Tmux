@@ -7,29 +7,10 @@
 
 CURRENT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
-cpu_interpolation=(
-  "\#{mw_cookie}"
-)
-cpu_commands=(
-  "#(${CURRENT_DIR}/scripts/midway-helper.sh)"
-)
+. "$CURRENT_DIR/scripts/helpers.sh"
 
-get_tmux_option() {
-  local option
-  local default_value
-  local option_value
-  option="$1"
-  default_value="$2"
-  option_value="$(tmux show-option -qv "$option")"
-  if [ -z "$option_value" ]; then
-    option_value="$(tmux show-option -gqv "$option")"
-  fi
-  if [ -z "$option_value" ]; then
-    echo "$default_value"
-  else
-    echo "$option_value"
-  fi
-}
+mw_interpolation="\#{mw_cookie}"
+mw_command="#(${CURRENT_DIR}/scripts/midway.sh)"
 
 set_tmux_option() {
   local option=$1
@@ -39,9 +20,7 @@ set_tmux_option() {
 
 do_interpolation() {
   local all_interpolated="$1"
-  for ((i = 0; i < ${#cpu_commands[@]}; i++)); do
-    all_interpolated=${all_interpolated//${cpu_interpolation[$i]}/${cpu_commands[$i]}}
-  done
+  all_interpolated=${all_interpolated//${mw_interpolation}/${mw_command}}
   echo "$all_interpolated"
 }
 
