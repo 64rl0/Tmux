@@ -40,10 +40,17 @@ set -g status-right '#{mw_cookie} '
 Here are all available options with their default values:
 
 ```shell
-@mw_cookie_valid_color "default" # foreground color when 
-@mw_cookie_expiring_color "default" # foreground color when 
-@mw_cookie_expired_color "default" # foreground color when 
-@mw_cookie_color_end "default" # foreground reset color after formatting
+@mw_cookie_valid_color_fg "default" # foreground color when cookie is VALID.
+@mw_cookie_valid_color_bg "default" # background color when cookie is VALID.
+
+@mw_cookie_expiring_color_fg "default" # foreground color when cookie is about to expire, time can be set in the scripts folder of the plugin.
+@mw_cookie_expiring_color_bg "default" # background color when cookie is about to expire, time can be set in the scripts folder of the plugin.
+
+@mw_cookie_expired_color_fg "default" # foreground color when cookie is EXPIRED.
+@mw_cookie_expired_color_bg "default" # background color when cookie is EXPIRED.
+
+@mw_cookie_color_end_fg "default" # foreground reset color after formatting
+@mw_cookie_color_end_bg "default" # background reset color after formatting
 ```
 
 Note that these colors depend on your terminal / X11 config.
@@ -51,7 +58,7 @@ Note that these colors depend on your terminal / X11 config.
 You can can customize each one of these options in your `.tmux.conf`, for example:
 
 ```shell
-set -g @mw_cookie_valid_color "#00ff00"
+set -g @mw_cookie_valid_color_fg "#a6e3a1"
 ```
 
 Don't forget to reload the tmux environment (`$ tmux source-file ~/.tmux.conf`) after you do this.
