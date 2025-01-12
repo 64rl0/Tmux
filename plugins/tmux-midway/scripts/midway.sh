@@ -10,7 +10,6 @@ CURRENT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 . "$CURRENT_DIR/helpers.sh"
 
 
-
 mw_cookie() {
     local mw_cookie_valid_color_fg="$(get_tmux_option @mw_cookie_valid_color_fg default)"
     local mw_cookie_valid_color_bg="$(get_tmux_option @mw_cookie_valid_color_bg default)"
