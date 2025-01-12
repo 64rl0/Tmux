@@ -48,7 +48,7 @@ mw_cookie() {
                     mw_cookie_text+="#[fg=$mw_cookie_expired_color_fg,bg=$mw_cookie_expired_color_bg]AEA ✖#[fg=$mw_cookie_color_end_fg,bg=$mw_cookie_color_end_bg] "
                 fi
             # CN
-            if [[ "${cookie_domain}" =~ midway-auth.aws-border.cn ]]; then
+            elif [[ "${cookie_domain}" =~ midway-auth.aws-border.cn ]]; then
                 if [[ "${time_remaining_sec}" -gt "${secs_for_expiring}" ]]; then
                     mw_cookie_text+="#[fg=$mw_cookie_valid_color_fg,bg=$mw_cookie_valid_color_bg]AEA-CN ✔#[fg=$mw_cookie_color_end_fg,bg=$mw_cookie_color_end_bg] "
                 elif [[ "${time_remaining_sec}" -le "${secs_for_expiring}" && "${time_remaining_sec}" -gt 0 ]]; then
