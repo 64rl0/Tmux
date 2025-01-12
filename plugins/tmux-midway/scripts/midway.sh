@@ -43,7 +43,7 @@ mw_cookie() {
                 elif [[ "${time_remaining_sec}" -le "${secs_for_expiring}" && "${time_remaining_sec}" -gt 0 ]]; then
                     mw_cookie_text+="#[fg=$mw_cookie_expiring_color_fg,bg=$mw_cookie_expiring_color_bg]AEA $time_remaining_min#[fg=$mw_cookie_color_end_fg,bg=$mw_cookie_color_end_bg] "
                 elif [[ "${time_remaining_sec}" -le 0 ]]; then
-                    mw_cookie_text+="#[fg=$mw_cookie_expired_color_fg,bg=$mw_cookie_expired_color_bg]AEA ✖#[fg=$mw_cookie_color_end_fg,bg=$mw_cookie_color_end_bg]"
+                    mw_cookie_text+="#[fg=$mw_cookie_expired_color_fg,bg=$mw_cookie_expired_color_bg]AEA ✖#[fg=$mw_cookie_color_end_fg,bg=$mw_cookie_color_end_bg] "
                 fi
             elif [[ "${cookie_domain}" =~ auth.midway.csphome.adc-e.uk ]]; then
                 if [[ "${time_remaining_sec}" -gt "${secs_for_expiring}" ]]; then
