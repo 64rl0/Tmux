@@ -1,0 +1,10 @@
+c71d2113b4cb00eb159ad723fc5072ff5ec738b8		branch 'master' of https://github.com/wfxr/tmux-fzf-url
+d18721931d271e92808e62938d08f0eac5effc66	not-for-merge	branch 'dependabot/github_actions/actions/checkout-7' of https://github.com/wfxr/tmux-fzf-url
+06b6a0b50cbcddfbecc3e9db7e79142d80facef5	not-for-merge	branch 'feat/improve-sorting' of https://github.com/wfxr/tmux-fzf-url
+5f7e1219efb89aeb03e698149d3b7069788c4a26	not-for-merge	branch 'feat/improve-xre-setup' of https://github.com/wfxr/tmux-fzf-url
+a6f706011758ac466a05318a334e8febe5bee588	not-for-merge	branch 'feat/rewrite-in-rust' of https://github.com/wfxr/tmux-fzf-url
+bad368bf0227e89a8ed594457df19ed33dd77c67	not-for-merge	branch 'fix/bind-key-description' of https://github.com/wfxr/tmux-fzf-url
+4ff549034a4f63734fcedabebb7f50681bacf7e9	not-for-merge	branch 'fix/post-review-fixes' of https://github.com/wfxr/tmux-fzf-url
+22175379de4ad6baa8cd4fb2c2ba922f77d2a540	not-for-merge	branch 'fix/strip-quotes-from-urls' of https://github.com/wfxr/tmux-fzf-url
+b082f9f7db34cb021ad6a595a9f1305cfa9b919f	not-for-merge	branch 'fix/xre-install-no-popup' of https://github.com/wfxr/tmux-fzf-url
+776073ae89b3435253765f64286efdc0eef74e6b	not-for-merge	branch 'legacy' of https://github.com/wfxr/tmux-fzf-url

@@ -1,0 +1,13 @@
+fb82d88b3515ec5228dd5975d45cea5e3d110503	refs/heads/master
+c71d2113b4cb00eb159ad723fc5072ff5ec738b8	refs/remotes/origin/HEAD
+d18721931d271e92808e62938d08f0eac5effc66	refs/remotes/origin/dependabot/github_actions/actions/checkout-7
+06b6a0b50cbcddfbecc3e9db7e79142d80facef5	refs/remotes/origin/feat/improve-sorting
+5f7e1219efb89aeb03e698149d3b7069788c4a26	refs/remotes/origin/feat/improve-xre-setup
+a6f706011758ac466a05318a334e8febe5bee588	refs/remotes/origin/feat/rewrite-in-rust
+bad368bf0227e89a8ed594457df19ed33dd77c67	refs/remotes/origin/fix/bind-key-description
+4ff549034a4f63734fcedabebb7f50681bacf7e9	refs/remotes/origin/fix/post-review-fixes
+22175379de4ad6baa8cd4fb2c2ba922f77d2a540	refs/remotes/origin/fix/strip-quotes-from-urls
+b082f9f7db34cb021ad6a595a9f1305cfa9b919f	refs/remotes/origin/fix/xre-install-no-popup
+776073ae89b3435253765f64286efdc0eef74e6b	refs/remotes/origin/legacy
+c71d2113b4cb00eb159ad723fc5072ff5ec738b8	refs/remotes/origin/master
+776073ae89b3435253765f64286efdc0eef74e6b	refs/tags/legacy

@@ -1,5 +1,72 @@
 # Changelog
 
+## [2.3.0](https://github.com/catppuccin/tmux/compare/v2.2.2...v2.3.0) (2026-04-08)
+
+
+### Added
+
+* add RAM status module ([#570](https://github.com/catppuccin/tmux/issues/570)) ([4a9165b](https://github.com/catppuccin/tmux/commit/4a9165b2b029b57bbccc3bab488c3c8474a3056e))
+
+## [2.2.2](https://github.com/catppuccin/tmux/compare/v2.2.1...v2.2.2) (2026-04-08)
+
+
+### Fixed
+
+* Update status-line.md ([#528](https://github.com/catppuccin/tmux/issues/528)) ([4fb9e8d](https://github.com/catppuccin/tmux/commit/4fb9e8d10ed381981920054df8a449165efd23a6))
+
+## [2.2.1](https://github.com/catppuccin/tmux/compare/v2.2.0...v2.2.1) (2026-04-07)
+
+
+### Documentation
+
+* **03-resetting-theme:** remove tip ([#584](https://github.com/catppuccin/tmux/issues/584)) ([f451db9](https://github.com/catppuccin/tmux/commit/f451db96c8e4e7d9cdea7bbb0b57c149bfb40e28))
+
+## [2.2.0](https://github.com/catppuccin/tmux/compare/v2.1.3...v2.2.0) (2026-04-07)
+
+
+### Added
+
+* add a "reset" option to clear options on plugin load ([#500](https://github.com/catppuccin/tmux/issues/500)) ([556fea5](https://github.com/catppuccin/tmux/commit/556fea52bb5d827a42740bc605de4f1d8a0440de))
+
+
+### Fixed
+
+* change tmux plugin kube module uses ([#531](https://github.com/catppuccin/tmux/issues/531)) ([ef94979](https://github.com/catppuccin/tmux/commit/ef9497982032a9494f4bf3ad276fba58b61bd7e6))
+* **theme:** Cleanup duplicate palette theme color ([#562](https://github.com/catppuccin/tmux/issues/562)) ([efeb958](https://github.com/catppuccin/tmux/commit/efeb9583cec0bc7486caedbc309df0ea9505d332))
+
+
+### Documentation
+
+* clarify custom-status should be added before plugin is loaded ([#551](https://github.com/catppuccin/tmux/issues/551)) ([8b0b915](https://github.com/catppuccin/tmux/commit/8b0b9150f9d7dee2a4b70cdb50876ba7fd6d674a))
+* status-line left/right mixup ([#542](https://github.com/catppuccin/tmux/issues/542)) ([9d21d7c](https://github.com/catppuccin/tmux/commit/9d21d7ccd50df82bd732be2850ce2798e78b6391))
+* stop recommending `-o` ([#524](https://github.com/catppuccin/tmux/issues/524)) ([14a546f](https://github.com/catppuccin/tmux/commit/14a546fb64dc1141e5d02bac2185d8c1fd530d6a))
+
+## [2.1.3](https://github.com/catppuccin/tmux/compare/v2.1.2...v2.1.3) (2025-03-23)
+
+
+### Fixed
+
+* make the space in [@catppuccin](https://github.com/catppuccin)_window_flags_icon_format user-configurable ([#465](https://github.com/catppuccin/tmux/issues/465)) ([320e184](https://github.com/catppuccin/tmux/commit/320e184a31d0825cb4f4af550492cbdff2fc3ffc))
+* pomodoro plugin icon color - use a defined color (peach) rather than orange ([#466](https://github.com/catppuccin/tmux/issues/466)) ([da2143d](https://github.com/catppuccin/tmux/commit/da2143d2a6baf7951eda302678a57a171a78d78a))
+* use plain awk for the load status line module, removing a dep ([#508](https://github.com/catppuccin/tmux/issues/508)) ([c21246e](https://github.com/catppuccin/tmux/commit/c21246ed58e867c9594dc687c5e92b229bc1760d))
+* use the correct option for the left separator for the current window ([#450](https://github.com/catppuccin/tmux/issues/450)) ([ba9bd88](https://github.com/catppuccin/tmux/commit/ba9bd88c98c81f25060f051ed983e40f82fdd3ba))
+
+
+### Documentation
+
+* add a troubleshooting guide ([#473](https://github.com/catppuccin/tmux/issues/473)) ([ab647cf](https://github.com/catppuccin/tmux/commit/ab647cf91501cebbd3f967da2b488a5f87614e6b))
+* Correct the plugin path for TPM in the readme ([#492](https://github.com/catppuccin/tmux/issues/492)) ([ee8970d](https://github.com/catppuccin/tmux/commit/ee8970ddb5dd60fd93e254de9a30ed8277c7ccc7))
+* **README:** fix codeblock indentation ([#489](https://github.com/catppuccin/tmux/issues/489)) ([cce60ab](https://github.com/catppuccin/tmux/commit/cce60abc8efd7a641a5fcc8001e6b3ae61e8d5fe))
+* **README:** update migration guide issue link ([#493](https://github.com/catppuccin/tmux/issues/493)) ([073ee54](https://github.com/catppuccin/tmux/commit/073ee54992c59fedcc29c1525a26f95691f0ae1f))
+
+## [2.1.2](https://github.com/catppuccin/tmux/compare/v2.1.1...v2.1.2) (2024-12-08)
+
+
+### Fixed
+
+* improve uptime status sed script to report correct units for few uptime scenarios ([#437](https://github.com/catppuccin/tmux/issues/437)) ([31fc2bf](https://github.com/catppuccin/tmux/commit/31fc2bfb1123681dc06da613b944b85f81e4babd))
+* use current window separators for the current window format ([#443](https://github.com/catppuccin/tmux/issues/443)) ([2a6c45b](https://github.com/catppuccin/tmux/commit/2a6c45b7c0da1594de1105d6cef15e3e68981113))
+
 ## [2.1.1](https://github.com/catppuccin/tmux/compare/v2.1.0...v2.1.1) (2024-11-17)
 
 

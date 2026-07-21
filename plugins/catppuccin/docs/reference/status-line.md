@@ -14,6 +14,10 @@ set -g status-right-length 100
 set -g status-right "#{E:@catppuccin_status_application}#{E:@catppuccin_status_session}"
 set -g status-left ""
 ```
+Some notes about expanding options when setting the status line:
+* Options are expanded as format strings by placing `E:` before the option name.
+* When a module status string contains a reference to another variable, you have to add the `-F` flag that treats the value passed as a format string that is immediately expanded, that is use `set -gF` (see tmux [`set-option`](https://man.openbsd.org/OpenBSD-current/man1/tmux.1#set-option) man page).
+* Example for such a case is the [battery](#battery-module) module below, where the status contains the format string `#{battery_percentage}` that needs to be further expanded.
 
 ## Customizing modules
 
@@ -59,10 +63,10 @@ set -g @catppuccin_date_time_icon ""
 ### Notes for TPM users
 
 Make sure you load the catppuccin theme prior to setting the status-left and/or
-status-left options. This ensures the catppuccin options (such as colors and
+status-* options. This ensures the catppuccin options (such as colors and
 status modules) are defined so they can then be used.
 
-After status-left and/or status-left have been set, make sure to run TPM to load
+After status-left and/or status-right have been set, make sure to run TPM to load
 the modules. This runs any plugins that may replace text in the status line.
 
 ```bash
@@ -115,6 +119,23 @@ set -g @plugin 'tmux-plugins/tmux-cpu'
 run '~/.tmux/plugins/tpm/tpm'
 ```
 
+## RAM module
+
+**Requirements:** This module depends on [tmux-cpu](https://github.com/tmux-plugins/tmux-cpu/tree/master).
+
+**Install:** The preferred way to install tmux-cpu is using [TPM](https://github.com/tmux-plugins/tpm).
+
+**Configure:**
+
+```sh
+run ~/.config/tmux/plugins/catppuccin/tmux/catppuccin.tmux
+
+set -agF status-right "#{E:@catppuccin_status_ram}"
+
+set -g @plugin 'tmux-plugins/tmux-cpu'
+run '~/.tmux/plugins/tpm/tpm'
+```
+
 ## Weather modules
 
 ### tmux-weather
@@ -153,19 +174,12 @@ run '~/.tmux/plugins/tpm/tpm'
 
 ## Load module
 
-**Requirements:** This module depends on [tmux-loadavg](https://github.com/jamesoff/tmux-loadavg).
-
-**Install:** The preferred way to install tmux-loadavg is using [TPM](https://github.com/tmux-plugins/tpm).
-
 **Configure:**
 
 ```sh
 run ~/.config/tmux/plugins/catppuccin/tmux/catppuccin.tmux
 
 set -agF status-right "#{E:@catppuccin_status_load}"
-
-set -g @plugin 'jamesoff/tmux-loadavg'
-run '~/.tmux/plugins/tpm/tpm'
 ```
 
 ## Gitmux module
@@ -192,20 +206,20 @@ Add the following to your `~/.gitmux.conf` so that it uses catppuccin colors:
 
 ```yaml
 tmux:
-    styles:
-        clear: '#[fg=#{@thm_fg}]'
-        state: '#[fg=#{@thm_red},bold]'
-        branch: '#[fg=#{@thm_fg},bold]'
-        remote: '#[fg=#{@thm_teal}]'
-        divergence: '#[fg=#{@thm_fg}]'
-        staged: '#[fg=#{@thm_green},bold]'
-        conflict: '#[fg=#{@thm_red},bold]'
-        modified: '#[fg=#{@thm_yellow},bold]'
-        untracked: '#[fg=#{@thm_mauve},bold]'
-        stashed: '#[fg=#{@thm_blue},bold]'
-        clean: '#[fg=#{@thm_rosewater},bold]'
-        insertions: '#[fg=#{@thm_green}]'
-        deletions: '#[fg=#{@thm_red}]'
+  styles:
+    clear: "#[fg=#{@thm_fg}]"
+    state: "#[fg=#{@thm_red},bold]"
+    branch: "#[fg=#{@thm_fg},bold]"
+    remote: "#[fg=#{@thm_teal}]"
+    divergence: "#[fg=#{@thm_fg}]"
+    staged: "#[fg=#{@thm_green},bold]"
+    conflict: "#[fg=#{@thm_red},bold]"
+    modified: "#[fg=#{@thm_yellow},bold]"
+    untracked: "#[fg=#{@thm_mauve},bold]"
+    stashed: "#[fg=#{@thm_blue},bold]"
+    clean: "#[fg=#{@thm_rosewater},bold]"
+    insertions: "#[fg=#{@thm_green}]"
+    deletions: "#[fg=#{@thm_red}]"
 ```
 
 ## Pomodoro module
@@ -227,9 +241,9 @@ run '~/.tmux/plugins/tpm/tpm'
 
 ## Kube module
 
-**Requirements:** This module depends on [kube-tmux](https://github.com/jonmosco/kube-tmux).
+**Requirements:** This module depends on [tmux-kubectx](https://github.com/tony-sol/tmux-kubectx).
 
-**Install:** The preferred way to install kube-tmux is using [TPM](https://github.com/tmux-plugins/tpm).
+**Install:** The preferred way to install tmux-kubectx is using [TPM](https://github.com/tmux-plugins/tpm).
 
 **Configure:**
 
@@ -241,6 +255,6 @@ run ~/.config/tmux/plugins/catppuccin/tmux/catppuccin.tmux
 
 set -agF status-right "#{E:@catppuccin_status_kube}"
 
-set -g @plugin 'jonmosco/kube-tmux'
+set -g @plugin 'tony-sol/tmux-kubectx'
 run '~/.tmux/plugins/tpm/tpm'
 ```
