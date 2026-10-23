@@ -169,7 +169,12 @@ mw_cookie() {
                 fi
             fi
         fi
-    done <"${HOME}/.midway/cookie" || printf 'N/A'
+    done <"${HOME}/.midway/cookie"
+
+    # If nothing was added to the text variable, force it to be N/A
+    if [[ -z "${mw_cookie_text//[[:space:]]/}" ]]; then
+        mw_cookie_text="N/A"
+    fi
 
     # Remove trailing whitespace
     echo "${mw_cookie_text%"${mw_cookie_text##*[![:space:]]}"}"
