@@ -100,7 +100,7 @@ mw_cookie() {
                     mw_cookie_text+="#[fg=$mw_cookie_expiring_color_fg,bg=$mw_cookie_expiring_color_bg]AEA-DCA $time_remaining_min#[fg=$mw_cookie_color_end_fg,bg=$mw_cookie_color_end_bg] "
                 elif [[ "${time_remaining_sec}" -le 0 ]]; then
                     mw_cookie_text+="#[fg=$mw_cookie_expired_color_fg,bg=$mw_cookie_expired_color_bg]AEA-DCA ✖#[fg=$mw_cookie_color_end_fg,bg=$mw_cookie_color_end_bg] "
-                fi 
+                fi
             fi
         # MIDWAY COOKIE
         elif [[ "${cookie_name}" == "session" ]]; then
@@ -169,7 +169,7 @@ mw_cookie() {
                 fi
             fi
         fi
-    done <"${HOME}/.midway/cookie" || printf 'NOT-FOUND'
+    done <"${HOME}/.midway/cookie" || printf 'N/A'
 
     # Remove trailing whitespace
     echo "${mw_cookie_text%"${mw_cookie_text##*[![:space:]]}"}"
