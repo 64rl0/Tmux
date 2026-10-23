@@ -10,9 +10,7 @@ CURRENT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 . "$CURRENT_DIR/scripts/helpers.sh"
 
 mw_interpolation="\#{mw_cookie}"
-# Execute the script, check if it contains N/A or is blank.
-# If it does, return an empty string. If it contains a real cookie, expand the module.
-mw_command="#(?{m:*N/A*,#(${CURRENT_DIR}/scripts/midway.sh)},,#(${CURRENT_DIR}/scripts/midway.sh))"
+mw_command="#(${CURRENT_DIR}/scripts/midway.sh)"
 
 set_tmux_option() {
   local option=$1
